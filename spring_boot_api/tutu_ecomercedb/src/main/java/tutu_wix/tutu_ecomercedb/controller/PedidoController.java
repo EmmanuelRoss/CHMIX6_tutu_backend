@@ -16,7 +16,7 @@ import tutu_wix.tutu_ecomercedb.model.Pedido;
 import tutu_wix.tutu_ecomercedb.service.PedidoService;
 
 @RestController
-@RequestMapping(path="/api/pedido")
+@RequestMapping(path="/api/pedido/")
 public class PedidoController {
 	
 	private final PedidoService pediService;

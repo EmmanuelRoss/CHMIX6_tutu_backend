@@ -17,7 +17,7 @@ import tutu_wix.tutu_ecomercedb.model.Categoria;
 import tutu_wix.tutu_ecomercedb.service.CategoriaService;
 
 @RestController
-@RequestMapping(path="/api/categoria")
+@RequestMapping(path="/api/categoria/")
 public class CategoriaController {
 
 	private final CategoriaService cateService;
