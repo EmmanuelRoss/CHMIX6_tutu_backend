@@ -20,8 +20,9 @@ public class TutuApplication {
 				new FilterRegistrationBean<JwtFilter>();
 		registrationBean.setFilter(new JwtFilter());
 		registrationBean.addUrlPatterns("/api/usuarios/*");
+		registrationBean.addUrlPatterns("/api/administradores/*");
 		//registrationBean.addUrlPatterns("/api/productos/*");
-		return null;
+		return registrationBean;
 	}
 	
 
