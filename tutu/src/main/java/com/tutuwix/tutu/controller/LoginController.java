@@ -10,6 +10,7 @@ import com.tutuwix.tutu.model.Token;
 import com.tutuwix.tutu.model.Usuario;
 import com.tutuwix.tutu.service.UsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
 @RequestMapping(path="/api/login/")
+@CrossOrigin("*")
 public class LoginController {
 	private final UsuariosService usuariosService;
 	@Autowired
@@ -41,7 +43,7 @@ public class LoginController {
 			
 		}
 		
-		throw new ServletException("Nombre de usuario o contraseÃ±a incorrectos");
+		throw new ServletException("Nombre de usuario o contraseña incorrectos");
 	}
 	
 	

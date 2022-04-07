@@ -1,4 +1,4 @@
-package tutu_wix.tutu_ecomercedb.service;
+package com.tutuwix.tutu.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tutu_wix.tutu_ecomercedb.model.Pedido;
+import com.tutuwix.tutu.model.Pedido;
 
 @Service
 public class PedidoService {

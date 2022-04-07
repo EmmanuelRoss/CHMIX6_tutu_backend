@@ -1,7 +1,5 @@
 package com.tutuwix.tutu.controller;
 
-import com.tutuwix.tutu.model.*;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,43 +13,46 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tutuwix.tutu.service.CategoriasService;
+import com.tutuwix.tutu.model.Categoria;
+import com.tutuwix.tutu.service.CategoriaService;
+
+
 
 @RestController
-@RequestMapping(path="api/categoria")
+@RequestMapping(path="/api/categoria/")
 public class CategoriaController {
-	
-	private final CategoriasService cateService;
+
+	private final CategoriaService cateService;
 	@Autowired
-	public CategoriaController(CategoriasService cateService) {
+	public CategoriaController(CategoriaService cateService) {
 		this.cateService = cateService; 
-	}
+	}//constructor
 	
 	@GetMapping
-	public List<Categoria> getCategoria(){
-		return cateService.getCategorias();
-	}
+	public List<Categoria> getCategorias(){
+		return cateService.getCategorias(); 
+	}//getCategoria
 	
-	@GetMapping(path="{cateId}")//Obtener todos los registros de una db
-	public Categoria getCategoria(@PathVariable("cateId") Long idcategoria) {
-		return cateService.getCategoria(idcategoria);
-	}
+	@GetMapping(path="{cateId}")
+	public Categoria getCategoria(@PathVariable("cateId")Long id ) {
+		return cateService.getCategoria(id);
+	}//getCategoria
 	
-	@DeleteMapping("{cateId}")//Eliminar un registro por un id
-	public Categoria deleteCategoria(@PathVariable("cateId") Long idcategoria) {
-		//return cateService.deleteCategoria(id);
-		Categoria tmpCategoria =cateService.deleteCategoria(idcategoria);
-		return tmpCategoria;
-	}
+	@DeleteMapping(path="{cateId}")
+	public Categoria deleteCategoria(@PathVariable("cateId")Long id ) {
+		return cateService.deleteCategoria(id);
+	}//deleteCategoria
 	
-	@PostMapping//Agregar una nueva categoria solo si esta no existe
+	@PostMapping
 	public Categoria addCategoria(@RequestBody Categoria categoria) {
-		return cateService.addCategoria(categoria);		
-	}
+		return cateService.addCategoria(categoria);
+	}//addCategoria
 	
 	@PutMapping(path="{cateId}")
-	public Categoria updateCategoria(@PathVariable("cateId")Long idcategoria, @RequestParam(required=false) String nombre) {
-		return cateService.updateCategoria(idcategoria, nombre);
-	}
+	public Categoria updateCategoria(@PathVariable("cateId")Long id, 
+			@RequestParam(required = false) String nombre ) {
+		return cateService.updateCategoria(id, nombre);
+	}//updateCategoria
 	
-}
+	
+}//class CategoriaController

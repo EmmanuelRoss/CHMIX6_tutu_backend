@@ -1,4 +1,4 @@
-package tutu_wix.tutu_ecomercedb.controller;
+package com.tutuwix.tutu.controller;
 
 import java.util.List;
 
@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import tutu_wix.tutu_ecomercedb.model.Producto;
-import tutu_wix.tutu_ecomercedb.service.ProductoService;
+import com.tutuwix.tutu.model.Producto;
+import com.tutuwix.tutu.service.ProductoService;
+
+
 
 @RestController
 @RequestMapping(path="/api/productos/")

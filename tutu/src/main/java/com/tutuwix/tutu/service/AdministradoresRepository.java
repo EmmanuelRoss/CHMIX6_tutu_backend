@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.tutuwix.tutu.model.Administrador;
-import com.tutuwix.tutu.model.Categoria;
+
 
 public interface AdministradoresRepository extends JpaRepository<Administrador, Long>{
 	@Query("SELECT a FROM Administrador a WHERE a.nombre_admin=?1")
