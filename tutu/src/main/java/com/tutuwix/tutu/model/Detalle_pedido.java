@@ -1,4 +1,4 @@
-package tutu_wix.tutu_ecomercedb.model;
+package com.tutuwix.tutu.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -17,7 +17,7 @@ import com.tutuwix.tutu.model.Usuario;
 import com.tutuwix.tutu.service.UsuariosService;
 
 @RestController
-@RequestMapping(path="api/usuarios")
+@RequestMapping(path="/api/usuarios/")
 public class UsuariosController {
 	
 	private final UsuariosService usuarioService;

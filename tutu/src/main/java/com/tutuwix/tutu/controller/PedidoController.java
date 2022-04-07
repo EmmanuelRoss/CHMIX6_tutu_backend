@@ -1,4 +1,4 @@
-package tutu_wix.tutu_ecomercedb.controller;
+package com.tutuwix.tutu.controller;
 
 import java.util.List;
 
@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import tutu_wix.tutu_ecomercedb.model.Pedido;
-import tutu_wix.tutu_ecomercedb.service.PedidoService;
+
+import com.tutuwix.tutu.model.Pedido;
+import com.tutuwix.tutu.service.PedidoService;
+
 
 @RestController
-@RequestMapping(path="/api/pedido")
+@RequestMapping(path="/api/pedido/")
 public class PedidoController {
 	
 	private final PedidoService pediService;

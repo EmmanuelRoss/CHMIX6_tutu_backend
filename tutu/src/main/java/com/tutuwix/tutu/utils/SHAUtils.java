@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class SHAUtils {
-	public static String salt=" ";
+	public static String salt="";
 	public static String createHash(String value) {	
 		String res = "";
 		value += salt;
@@ -20,7 +20,7 @@ public class SHAUtils {
 			}// for i 		
 		}catch (NoSuchAlgorithmException e) {
 			System.out.println(e.toString());
-		}		
+		}//catch
 		return res;
 	}
 	
@@ -32,6 +32,6 @@ public class SHAUtils {
 	}
 	
 //	public static void main(String[] args) {
-//		System.out.println(createHash("aeiou"));
+//		System.out.println(createHash("gustavo"));
 //	}
-}
+}//class SHAUtils

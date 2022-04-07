@@ -1,7 +1,9 @@
-package tutu_wix.tutu_ecomercedb.service;
+package com.tutuwix.tutu.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import tutu_wix.tutu_ecomercedb.model.Detalle_pedido;
+
+import com.tutuwix.tutu.model.Detalle_pedido;
+
 
 public interface Detalle_pedidoRepository extends JpaRepository<Detalle_pedido, Long> {
 

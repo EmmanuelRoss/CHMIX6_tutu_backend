@@ -17,7 +17,7 @@ import com.tutuwix.tutu.model.ChangePasswordAdmin;
 import com.tutuwix.tutu.service.AdministradoresService;
 
 @RestController
-@RequestMapping(path="api/administradores")
+@RequestMapping(path="/api/administradores/")
 public class AdministradoresController {
 	
 	private final AdministradoresService administradorService;

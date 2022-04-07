@@ -3,14 +3,14 @@ package com.tutuwix.tutu.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.tutuwix.tutu.service.UsuariosRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tutuwix.tutu.model.ChangePassword;
 import com.tutuwix.tutu.model.Usuario;
 import com.tutuwix.tutu.utils.SHAUtils;
-import com.tutuwix.tutu.model.Usuario;
+
 
 @Service
 public class UsuariosService {
@@ -55,7 +55,7 @@ public class UsuariosService {
 			Usuario u = userByName.get();
 //			if(u.getPassword().equals(changePassword.getPassword())) {
 //			u.setPassword(changePassword.getNewPassword());
-			if(SHAUtils.verifyHash(changePassword.getNewPassword(), u.getContrasenia())) {								
+			if(SHAUtils.verifyHash(changePassword.getContrasenia(), u.getContrasenia())) {								
 				u.setContrasenia(SHAUtils.createHash(changePassword.getNewPassword()));
 				usuariosRepository.save(u);
 			}
@@ -68,7 +68,7 @@ public class UsuariosService {
 		Optional<Usuario> userByName=usuariosRepository.findByUsername(usuario.getNombre_usu());
 		if(userByName.isPresent()) {
 			Usuario u = userByName.get();
-//			if(u.getPassword().equals(usuario.getPassword())) {
+//			if(u.getContrasenia().equals(usuario.getContrasenia())) {
 			if(SHAUtils.verifyHash(usuario.getContrasenia(), u.getContrasenia())) {
 				//res="OK";
 				res=true;
