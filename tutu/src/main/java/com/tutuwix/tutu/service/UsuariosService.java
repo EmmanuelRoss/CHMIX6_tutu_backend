@@ -29,7 +29,7 @@ public class UsuariosService {
 	public Usuario getUsuario(Long id) {
 		return usuariosRepository.findById(id).orElseThrow(
 				()-> new IllegalStateException(
-						"El usuario con el id "+id+"noexiste."));
+						"El usuario con el id "+id+"no existe."));
 	}
 	
 	public void deleteUsuario(Long id) {
