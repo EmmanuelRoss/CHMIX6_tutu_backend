@@ -21,7 +21,7 @@ public class TutuApplication {
 		registrationBean.setFilter(new JwtFilter() );
 		registrationBean.addUrlPatterns("/api/usuarios/*");
 		//registrationBean.addUrlPatterns("/api/administradores/*");
-		registrationBean.addUrlPatterns("/api/productos/*");
+		//registrationBean.addUrlPatterns("/api/productos/*");
 		return registrationBean;
 	}
 	
